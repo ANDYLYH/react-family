@@ -1,0 +1,617 @@
+ .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+ .trigger:hover {
+  color: #108ee9;
+}
+
+// .mylogo {
+//height: 32px;
+//background: #333;
+//border-radius: 6px;
+//margin: 16px;
+//}
+.mylogo{
+    height: 32px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 32px;
+    margin: 16px;
+    background: #333;
+    color: #FFF;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#components-layout-demo-custom-trigger .ant-layout-sider-collapsed .anticon {
+  font-size: 16px;
+}
+
+#components-layout-demo-custom-trigger .ant-layout-sider-collapsed .nav-text {
+  display: none;
+}
+
+
+
+
+.homeMainContent{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #FFF;
+}
+.nav-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    height: 100vh;
+    background: #001529;
+    z-index: 10;
+    .mylogo{
+        height: 62px;
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+        line-height: 62px;
+        background-color: #FFF;
+        border-bottom: 1px solid #efefef;
+        border-right: 1px solid #efefef;
+    }
+//  .ant-layout-sider {
+//      background: #313653;
+//  }
+//  .ant-menu-root.ant-menu-inline, .ant-menu-root.ant-menu-vertical {
+//      background: #313653;
+//      color: #ffffff;
+//  }
+    .ant-menu-root.ant-menu-inline .ant-menu-submenu > .ant-menu, .ant-menu-root.ant-menu-vertical .ant-menu-submenu > .ant-menu {
+        background-color: rgba(58, 64, 99, 0.15);
+    }
+    .ant-menu-item > a::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        content: '';
+    }
+    .ant-menu-root.ant-menu-inline a, .ant-menu-root.ant-menu-vertical a {
+        color: #ffffff;
+    }
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: #8b8e94;
+    }
+    .ant-menu-vertical .ant-menu-item:after, .ant-menu-vertical-left .ant-menu-item:after, .ant-menu-vertical-right .ant-menu-item:after, .ant-menu-inline .ant-menu-item:after {
+        border-right: 3px solid #313653;
+    }
+    .ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title {
+        width: calc(100%);
+    }
+    .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+        border-right: 0; 
+    }
+    .ant-menu-submenu-active{
+        color: #fff;
+    }
+}
+
+.ant-menu-dark {
+  &.ant-menu-inline {
+    .ant-menu-item-selected {
+      background-color: #5f5f5f !important;
+    }
+  }
+}
+.custom-trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 16px;
+  cursor: pointer;
+  transition: color .3s;
+}
+.ant-layout-sider-collapsed {
+  overflow-y: initial !important;
+}
+.avatar {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  line-height: 1;
+  border-radius: 500px;
+  white-space: nowrap;
+  font-weight: bold;
+  i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    margin: 1px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 100%;
+    &.bottom {
+      left: auto;
+      top: auto;
+      bottom: 0;
+      right: 0;
+    }
+    &.on {
+      background-color: #6cc788;
+    }
+  }
+  img {
+    border-radius: 500px;
+    width: 100%;
+  }
+}
+.switcher {
+  z-index: 1050;
+  position: fixed;
+  top: 78px;
+  right: -240px;
+  width: 240px;
+  transition: right 0.2s ease;
+  border: 1px solid rgba(120, 120, 120, 0.1);
+  background-clip: padding-box;
+  &.active {
+    right: -2px;
+  }
+  .sw-btn {
+    position: absolute;
+    left: -43px;
+    top: -1px;
+    padding: 10px 15px;
+    z-index: 1045;
+    border: 1px solid rgba(120, 120, 120, 0.1);
+    border-right-width: 0;
+    background-clip: padding-box;
+  }
+}
+.com-mainSection {
+        height: 70vh;
+        overflow-y: auto;
+        background-color: #fff;
+    }
+    
+    .main {
+        margin-left: 200px;
+        min-width: 750px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+.flexAlignCenter{
+    float: right;
+    .name{
+        font-size: 14px;
+        margin-top: 5px;
+        color: #333;
+    }
+}
+
+    
+    .app-header {
+        height: 62px;
+        overflow: hidden;
+        border-bottom: 1px solid #eee;
+        background: #fff;
+        .main-title{
+            height: 62px;
+            line-height: 62px;
+            float: left;
+            color: #333;
+            font-size: 24px;
+            padding-left: 10px;
+            width: 400px;
+            
+        }
+        .msg-box {
+            height: 40px;
+            width: 60px;
+            float: right;
+            margin-right: 16px;
+            margin-top: 8px;
+
+            .icon-btn{
+                display: block;
+                height: 40px;
+                width: 40px;
+//              background: url(../assets/images/mssage.png) no-repeat 50% 50%;
+                background-size:35px 35px;
+            }
+            .active {
+                animation-name: myfirst;
+                animation-duration: 0.2s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                animation-play-state: running;
+            }
+        }
+    }
+    
+    @keyframes myfirst {
+        from {
+            opacity: 0.1;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes myfirst
+    /* Firefox */
+    
+    {
+        from {
+            opacity: 0.1;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes myfirst
+    /* Safari 和 Chrome */
+    
+    {
+        from {
+            opacity: 0.1;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @-o-keyframes myfirst
+    /* Opera */
+    
+    {
+        from {
+            opacity: 0.1;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    .el-button.is-circle {
+        font-size: 20px;
+    }
+    
+    .main.active {
+        margin-left:90px;
+    }
+    
+    .appRight {
+        display: flex;
+    }
+    
+    .app-router {
+        flex: 1;
+        height: calc(100vh - 60px);
+        overflow: auto;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+        position: relative;
+    }
+        .btn-box{
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }   
+    .msg-content {
+        width: 100%;
+        border: 1px solid #eee;
+        min-height: 400px;
+        display: flex;
+        .msg-left {
+            flex: 1.5;
+            border-right: 1px solid #eee;
+            .msg-top {
+                height: 49px;
+                line-height: 49px;
+                padding: 0 10px;
+                border-bottom: 1px solid #eee;
+            }
+            .msg-bot {
+                width: 100%;
+                height: auto;
+                .type-list {
+                    height: auto;
+                    width: 100%;
+                    .type-item {
+                        height: 48px;
+                        line-height: 48px;
+                        padding: 0 10px;
+                        text-align: center;
+                        border-bottom: 1px solid #EEEEEE;
+                        color: #666;
+                        cursor: pointer;
+                        text-align: left;
+                        .red-text {
+                            display: inline-block;
+                            position: relative;
+                            top: 5px;
+                        }
+                        &:hover,
+                        &.active {
+                            background: #F8F8F8;
+                            border-left: 5px solid #2D8CF0;
+                        }
+                    }
+                }
+            }
+        }
+        .mas-right {
+            flex: 5;
+        }
+        .msg-txt{
+            cursor: pointer;
+            color: #3399FF;
+        }
+
+    }
+
+  .timeInfo{
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    margin:0 20px;
+    height: 62px;
+    overflow: hidden;
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+  }
+  .logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+
+    .btn_out {
+        border: none;
+        background: none;
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 200px;
+        height: 100vh;
+        background: #fff;
+        z-index: 10;
+    }
+    
+    .nav.active {
+        width: 90px;
+    }
+    
+    .navMain {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: #444;
+        width: 90px;
+        overflow-x: hidden;
+        .nav_img {
+            height: 61px;
+            line-height: 61px;
+            text-align: center;
+            img {
+                height: 34px;
+                width: 34px;
+                border-radius: 50%;
+            }
+        }
+        .navlist {
+            .navlist-item {
+                width: 90px;
+                height: 38px;
+                display: inline-block;
+                padding-left: 15px;
+                line-height: 38px;
+                font-size: 14px;
+                color: #cacaca;
+                /*margin-top: 15px;*/
+                margin-bottom: 15px;
+                cursor: pointer;
+                // 添加客服模块的样式
+                position: relative;
+                .toIm {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    // z-index:1000000;
+                }
+                &:hover,
+                &.active {
+                    background: #fff;
+                    color: #333;
+                }
+            }
+        }
+    }
+    
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 90px;
+        width: 110px;
+        height: 100vh;
+        overflow-x: hidden;
+        background: #fff;
+        border-right: 1px solid #E6E6E6;
+        font-size: 14px;
+        .title {
+            color: #333;
+            height: 62px;
+            line-height: 62px;
+            text-align: center;
+            font-size: 14px;
+            border-bottom: 1px solid #E6E6E6;
+        }
+        ul {
+            padding: 0 12px;
+            li a{
+                width: 90px;
+                padding: 8px 0px;
+                display: inline-block;
+                text-align: center;
+                line-height: 20px;
+                margin-top: 15px;
+                cursor: pointer;
+                color: #333;
+                text-decoration: none;
+                &:hover,
+                &.router-link-active {
+                    background: #F8F8F8;
+                    border-radius: 2px;
+                    /*  color: #333333;*/
+                }
+                &.router-active{
+                     border-radius: 2px;
+                    background: #F8F8F8;
+                }
+            }
+        }
+    }
+    
+    .sign_out {
+        height: 56px;
+        background: rgba(255, 255, 255, .1);
+        line-height: 56px;
+        text-align: center;
+        width: 100px;
+        font-size: 14px;
+        color: #FFFFFF;
+        // cursor:pointer;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        .sign_lr {
+            position: absolute;
+            width: 162px;
+            height: auto;
+            background: #FFFFFF;
+            box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.28);
+            border-radius: 2px;
+            color: #787878;
+            top: -160px;
+            left: 10px;
+            &:after {
+                content: '';
+                border-width: 7px;
+                border-color: #FFFFFF;
+                border-bottom-width: 0;
+                border-style: dashed;
+                border-top-style: solid;
+                border-left-color: transparent;
+                border-right-color: transparent;
+                position: absolute;
+                left: 23px;
+                bottom: -7px;
+            }
+            .title {
+                background: #F8F8F8;
+                height: 50px;
+                padding: 0 10px 0 20px;
+                line-height: 50px;
+                color: #333;
+                font-size: 14px;
+                text-align: left;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .sign_btn {
+                text-align: left;
+                padding-left: 20px;
+            }
+        }
+    }
+    
+    .btn_out {
+        border: none;
+        background: none;
+        width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    /*重置的样式*/
+    
+    .sign_out .el-dropdown-menu__item {
+        padding: 0;
+    }
+    
+    .sign_out .el-button {
+        background: none;
+        font-size: 14px;
+        color: #787878;
+        border: none;
+        padding: 0;
+    }
+    /*修改密码弹窗*/
+    
+    .shadeContent {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.05);
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+    
+    .alertBox {
+        width: 350px;
+        height: 250px;
+        position: absolute;
+        padding: 20px;
+        border: 1px solid #ccc;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        z-index: 999;
+        color: #000;
+        background: #fff;
+        border-radius: 10px;
+    }
+    
+    .alertBox .title {
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .alertBox .resetpassword-btn-con {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+    }

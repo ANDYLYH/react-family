@@ -1,0 +1,150 @@
+.signIn_Content {
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+.signIn_bg {
+    height: 100%;
+    width: 100%;
+    min-width: 1200px;
+    position: absolute;
+    margin: 0 auto;
+//  background: url(../../assets/login.jpg) no-repeat center center; /*背景图*/
+    background-size:cover;
+    z-index: -1;
+}
+
+.signIn_ContentMain {
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.signIn_form {
+    width: 400px;
+    height: 460px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    position: absolute;
+    left: 50%;
+    margin-left: -200px;
+    top: 113px;
+}
+
+.signIn_form_footer {
+    width: 400px;
+    height: 65px;
+    line-height: 65px;
+    position: absolute;
+    bottom: 0;
+    background-color: #f0f0f0;
+}
+
+.signIn_form_footer span {
+    margin-left: 30px;
+    color: #8b8b8b;
+}
+
+.signIn_form_footer .go_zhuce {
+    height: 40px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #FFFFFF;
+    margin-right: 15px;
+    border: 1px solid rgb(216, 216, 216);
+    float: right;
+    margin-top: 12px;
+    border-radius: 3px;
+}
+
+.signIn_formMain {
+    width: 100%;
+    height: 395px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0 30px;
+}
+
+.signIn_formMain_head {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    padding-top: 40px;
+}
+
+.signIn_formMain_input {
+    height: 48px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.signIn_formMain_input input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-left: 14px;
+    font-size: 14px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+}
+
+.signIn_formMain_input input::-webkit-input-placeholder {
+    color: rgb(216, 216, 216);
+}
+
+.signIn_formMain_input button {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: 0;
+    background-image: linear-gradient(45deg, #0c81ce 0%, #81abe0 100%);
+}
+
+.signIn_formMain_input button:hover {
+    /*background: url(../img/btn_active.png) no-repeat center center;*/
+}
+
+.signIn_formMain_tips {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.signIn_formMain_tips a {
+    text-decoration: none;
+    color: #007ee5;
+}
+
+
+/*底部*/
+
+.signIn_footer {
+    height: calc(100vh - 700px);
+    width: 100%;
+    background-color: #373d41;
+}
+
+.signIn_footerText {
+    height: 64px;
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 64px;
+    text-align: center;
+    /*background: url(../img/signIn_right.png) no-repeat center center;*/
+    background-size: 398px 16px;
+    color: #FFFFFF;
+}
