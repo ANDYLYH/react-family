@@ -82,3 +82,11 @@ export const deleteHorseman = (params = {}) => {
     }
   });
 };
+//启用/停用系统用户
+export const editIsStop = (params = {}) => {
+  return http.post(api.editIsStop,qs.stringify(params),{
+    headers:{
+      'Content-Type':'application/x-www-form-urlencoded'
+    }
+  });
+}

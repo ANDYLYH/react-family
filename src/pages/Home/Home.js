@@ -13,6 +13,11 @@ class Home extends React.Component {
   state = {
     collapsed: false,
   };
+  componentWillMount(){
+		if(!localStorage.getItem('code')){
+			this.props.history.push('/Login');
+		}
+	}
   toggle = () => {
     this.setState({
       collapsed: !this.state.collapsed,

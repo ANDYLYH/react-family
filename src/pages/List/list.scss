@@ -6,3 +6,17 @@
     text-align: right;
     padding: 15px 0;
 }
+.searchFormBox{
+    margin: 10px;
+    width: 100%;
+    overflow: hidden;
+   .searchForm-Item{
+        width: 200px;
+        float: left;
+    } 
+    .searchForm-btn{
+        float: left;
+        margin-left: 20px;
+    }
+}
+

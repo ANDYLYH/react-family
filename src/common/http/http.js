@@ -48,6 +48,7 @@ http.interceptors.response.use(function(response) {
 			code: data.code,
 			message: "登录失效，请重新登录！"
 		}
+		
 		return Promise.reject(_tipMessage);
 	} else {
 		let tipMessage = {

@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
-import { Table, Icon,Pagination,message,Button,Modal} from 'antd';
-import {queryHorsemanInfo} from '../../common/service/horsemanManagement/horsemanInfo.js';
+import { Table, Icon,Pagination,message,Button,Modal,Input} from 'antd';
+import {queryHorsemanInfo,editIsStop} from '../../common/service/horsemanManagement/horsemanInfo.js';
+import mUTIL from '../../common/utils/utils.js';
 import '!style-loader!css-loader!sass-loader!./list.scss';
 
 class List extends React.Component {
@@ -23,14 +24,34 @@ class List extends React.Component {
 			},
 			tableData:[],
 			total:0,
+			flag:false
+			
 		}
 	};
-	goPage = () => {
-		this.props.history.push('/Home/Counter');
-	}
 	componentDidMount(){ 
-		this.HorsemanInfo();
+		const self = this;
+//		mUTIL.getLocalStorage({
+//			name: 'List',
+//			success: function(obj) {
+//				let data = Object.assign({}, self.state.formData, obj.data);
+//				//setState是异步的
+//				self.setState({
+//				  formData: data
+//				},()=>{
+//					self.HorsemanInfo();
+//				})
+//			},
+//			fail: function() {
+//				self.HorsemanInfo();
+//			}
+//		})
+		self.HorsemanInfo();
 	}
+	 componentWillReceiveProps(nextProps) {
+
+           console.log(nextProps);
+
+    }
 	HorsemanInfo = () =>{
 		const self = this;
 		queryHorsemanInfo(this.state.formData).then((res)=>{
@@ -40,18 +61,35 @@ class List extends React.Component {
 			});
 		}).catch((res)=>{
 			message.error(res.message)
-		})
+		});
+		mUTIL.setLocalStorage('List', this.state.formData);
 	}
-	deleteInfo = (_id) =>{
+	comfirmUpdata = (data) =>{
+		const self = this;
+		var _isStop = data.isStop == 1 ? 0 : 1;
+		var _text = data.isStop == 1 ? '启用成功' : '停用成功';
+		var _obj = {
+			id: data.id,
+			isStop: _isStop
+		};
 		Modal.confirm({
-		    title: '删除',
-		    content: '确定删除此条信息吗?',
+		    title: '操作提示',
+		    content: '您确定停用/启用该用户吗?',
 		    okText: '确定',
 		    cancelText: '取消',
 		    onOk:function(){
-		    	console.log('回调')
+		    	self.editIsStop(_obj,_text);
 		    }
 		});
+	}
+	//更新状态
+	editIsStop = (obj,_text) =>{
+		editIsStop(obj).then((res)=>{
+			message.success(_text);
+			this.HorsemanInfo();
+		}).catch((res)=>{
+			message.error(res.message)
+		})
 	}
 	//改变页码
 	hanlePageNumChange = (_pageNum) =>{
@@ -73,6 +111,16 @@ class List extends React.Component {
 		  formData: data
 		},()=>{
 			this.HorsemanInfo();
+		})
+	}
+	onChangeFn = (e) =>{
+		const self = this;
+		let data = Object.assign({}, self.state.formData, {userName:e.target.value});
+		//setState是异步的
+		self.setState({
+		  formData: data
+		},()=>{
+			self.HorsemanInfo();
 		})
 	}
 	render(){
@@ -104,19 +152,27 @@ class List extends React.Component {
 					<span>
 				      <Button type="primary">编辑</Button>
 				      <span className="ant-divider" />
-				      <Button type="primary" onClick={()=>this.deleteInfo(record.id)}>删除</Button>
+				      <Button type={record.isStop == 1 ? 'primary' : 'danger'} onClick={()=>this.comfirmUpdata(record)}>{record.isStop == 1 ? '启动' :"停用"}</Button>
 				    </span>
 				),
-			}];
-		return (
-			<div>
-				<Table {...this.state.config} columns={columns} dataSource={this.state.tableData} rowKey='id'/>
-				<div className="pageContent">
-					<Pagination showSizeChanger onChange={this.hanlePageNumChange} onShowSizeChange={this.onShowSizeChange} defaultCurrent={this.state.formData.pageNum} total={this.state.total} />
+			}]; 
+		var _userName = this.state.formData.userName;
+		return (<div>
+					<div className="searchFormBox">
+						<div className="searchForm-Item">
+							<Input size="large" placeholder="骑手名称" onChange={this.onChangeFn} value={_userName}/>
+						</div>
+						<div className="searchForm-btn">
+							<Button size="large" type="primary" >查询</Button>
+						</div>
+				    </div>
+					<Table {...this.state.config} columns={columns} dataSource={this.state.tableData} rowKey='id'/>
+					<div className="pageContent">
+						<Pagination showSizeChanger onChange={this.hanlePageNumChange} onShowSizeChange={this.onShowSizeChange} defaultCurrent={this.state.formData.pageNum} total={this.state.total} />
+					</div>
+					
 				</div>
-				
-			</div>
-		)
+				)
 	}
 }
 const mapStateToProps = (state) => {

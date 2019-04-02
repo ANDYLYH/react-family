@@ -24,6 +24,7 @@ class HeaderCustom extends React.Component {
     logout = () => {
     	console.log('退出登录');
         this.props.history.push('/Login');
+        localStorage.removeItem('code')
     };
     popoverHide = () => {
         this.setState({

@@ -16,4 +16,4 @@ export const deleteBatchHorsemanInfo = '/api/v1/horseman/deleteBatch'; //批量�
 export const updateStatus = '/api/v1/horseman/updateStatus'; //修改骑手状态信息
 export const updatehorsemanOrLeader = "/api/v1/horseman/updateHorsemanOrLeader"//修改骑手信息
 export const addhorsemanOrLeader = "/api/v1/horseman/addHorsemanOrLeader" //添加骑手信息
-
+export const editIsStop = '/api/v1/systemuser/editIsStop';     //启用/停用系统用户
