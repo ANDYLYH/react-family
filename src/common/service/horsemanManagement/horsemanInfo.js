@@ -49,22 +49,7 @@ export const deleteBatchHorsemanInfo = (params = {}) => {
     }
   });
 }
-//门店信息查询
-export const queryStoreNameInfo = (params = {}) => {
-  return http.post(api.queryStoreNameInfo,qs.stringify(params),{
-    headers:{
-      'Content-Type':'application/x-www-form-urlencoded'
-    }
-  });
-}
-//门店信息模糊匹配
-export const findStoreInfoByStoreName = (params = {}) => {
-  return http.post(api.findStoreInfoByStoreName,qs.stringify(params),{
-    headers:{
-      'Content-Type':'application/x-www-form-urlencoded'
-    }
-  });
-};
+
 //修改骑手状态信息
 export const updateStatus = (params = {}) => {
   return http.post(api.updateStatus,qs.stringify(params),{
@@ -92,14 +77,6 @@ export const updatehorsemanOrLeader = (params = {}) => {
 //删除骑手信息  
 export const deleteHorseman = (params = {}) => {
   return http.post(api.deleteHorseman,qs.stringify(params),{
-    headers:{
-      'Content-Type':'application/x-www-form-urlencoded'
-    }
-  });
-};
-//骑手考勤信息
-export const CourierCheck = (params = {}) => {
-  return http.post(api.CourierCheck,qs.stringify(params),{
     headers:{
       'Content-Type':'application/x-www-form-urlencoded'
     }

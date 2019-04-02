@@ -24,6 +24,7 @@ class LoginPage extends React.Component {
         };
         login(data).then((res) => {
         	history.push('/');
+        	localStorage.setItem('code', res.accessToken);
         }).catch((err) => {
         	
         });

@@ -5,10 +5,7 @@ import Bundle from './Bundle';
 //页面
 import AllComponents from '../pages';
 import navRoutes from './navConfig'
-
-const Loading = function () {
-    return <div>Loading...</div>
-};
+import Loading from '../component/Loading';
 
 const createComponent = (component) => (props) => (
     <Bundle load={component}>

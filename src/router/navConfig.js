@@ -1,9 +1,9 @@
 export default {
     menus: [ // 菜单相关路由
-        {id:1, key: '/Home/List', title: '列表页', icon: 'mobile', 
+        {id:1, key: '/Home/List', title: '数据显示', icon: 'mobile', 
           subs: [
                 {id:11, pid:1, key: '/Home/List', title: '列表页', component: 'List'},
-                {id:12, pid:1, key: '/Home/Test', title: '详情页', component: 'List'}
+                {id:12, pid:1, key: '/Home/Table', title: '表格', component: 'Table'}
             ],
         },
         {id:2,key: '/Home/UserInfo', title: '用户信息', icon: 'scan',
