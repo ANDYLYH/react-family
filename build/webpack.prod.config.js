@@ -9,8 +9,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var commonConfig = require('./webpack.common.config.js');
-
-process.env.NODE_ENV = 'production'
+const env = require('../config/prod.env')
 
 const publicConfig = {
 	devtool: 'cheap-module-source-map',
@@ -33,6 +32,9 @@ const publicConfig = {
 		}]
 	},
 	plugins: [
+		new webpack.DefinePlugin({
+	      'process.env': env
+	    }),
 		//清理文件夹
 		new CleanWebpackPlugin(),
 		/**

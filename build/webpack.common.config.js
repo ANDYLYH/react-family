@@ -6,7 +6,7 @@ const utils = require('./utils');
 const config = require('../config');
 var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const vueLoaderConfig = require('./vue-loader.conf')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -24,8 +24,8 @@ function resolve (dir) {
 	//每次编译添加hash值，避免缓存
 	output: {
 		path: config.build.assetsRoot,
-		filename: 'js/[name].[chunkhash].js',
-		chunkFilename: 'js/[name].[chunkhash].js',
+		filename: '[name].[chunkhash].js',
+		chunkFilename: '[name].[chunkhash].js',
 		publicPath: process.env.NODE_ENV === 'production'
 			        ? config.build.assetsPublicPath
 			        : config.dev.assetsPublicPath
@@ -45,10 +45,11 @@ function resolve (dir) {
 				use: [{
 					loader: 'url-loader',
 					options: {
-						limit: 8192
+						limit: 10000,
+						name: utils.assetsPath('img/[name].[hash:7].[ext]')
 					}
 				}]
-			}
+			}   
 		]
 	},
 	plugins: [

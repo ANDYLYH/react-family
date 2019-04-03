@@ -1,8 +1,12 @@
 const merge = require('webpack-merge');
 const path = require('path');
 const config = require('../config');
+const webpack = require('webpack');
 const commonConfig = require('./webpack.common.config.js');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const env = require('../config/dev.env')
+
 const devConfig  = {
 	devtool: 'inline-source-map',
 	//入口
@@ -33,13 +37,17 @@ const devConfig  = {
 		]
 	},
 	plugins: [
-//		new CopyWebpackPlugin([
-//	      {
-//	        from: path.resolve(__dirname, '../static'),
-//	        to: config.dev.assetsSubDirectory,
-//	        ignore: ['.*']
-//	      }
-//	    ])
+		new webpack.DefinePlugin({
+	      'process.env': env
+	  }),
+	   // copy custom static assets
+//  new CopyWebpackPlugin([
+//    {
+//      from: path.resolve(__dirname, '../../static'),
+//      to: config.dev.assetsSubDirectory,
+//      ignore: ['.*']
+//    }
+//  ])
 	],
 	//服务配置
 	devServer: {

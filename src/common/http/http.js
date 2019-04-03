@@ -48,7 +48,9 @@ http.interceptors.response.use(function(response) {
 			code: data.code,
 			message: "登录失效，请重新登录！"
 		}
-		
+		localStorage.removeItem('code');
+		//如果登录失效，跳转到登录页
+		window.location.hash = "#/Login";
 		return Promise.reject(_tipMessage);
 	} else {
 		let tipMessage = {

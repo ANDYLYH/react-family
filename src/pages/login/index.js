@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
+import { message} from 'antd';
 import '!style-loader!css-loader!sass-loader!./login.scss';
 import {login} from '../../common/service/login/login.js';
 class LoginPage extends React.Component {
@@ -26,7 +27,7 @@ class LoginPage extends React.Component {
         	history.push('/');
         	localStorage.setItem('code', res.accessToken);
         }).catch((err) => {
-        	
+        	message.error(err.message)
         });
       
 	}
