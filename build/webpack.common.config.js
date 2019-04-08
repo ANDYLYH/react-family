@@ -72,6 +72,12 @@ function resolve (dir) {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'runtime'
 		}),
+		// copy custom static assets
+		new CopyWebpackPlugin([{
+			from: path.resolve(__dirname, '../static'),
+			to: config.build.assetsSubDirectory,
+			ignore: ['.*']
+		}]),
 	],
 	//别名
 	resolve: {

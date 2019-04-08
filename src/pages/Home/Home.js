@@ -24,14 +24,13 @@ class Home extends React.Component {
     });
   }
   render() {
-    return (
+    return (   
       <Layout>
         <SiderMenu collapsed={this.state.collapsed}/>
         <Layout>
           <HeaderCustom toggle={this.toggle} collapsed={this.state.collapsed} />
           <Content style={{ margin: '10px', padding: 10, background: '#fff', minHeight: 280 }}>
             <HomeRouter/>
-            <img src="../../../static/img/logo.jpg"/> 	
           </Content>
         </Layout>
       </Layout>

@@ -9,8 +9,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require('webpack');
 var merge = require('webpack-merge');
 var commonConfig = require('./webpack.common.config.js');
-const env = require('../config/prod.env')
-
+const env = require('../config/prod.env');
 const publicConfig = {
 	devtool: 'cheap-module-source-map',
 	output: {
